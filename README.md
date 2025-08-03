@@ -18,3 +18,10 @@ user_data.sh
 git commit -m "Cleaned up .terraform and added .gitignore"
 git push origin main
 
+#To avoid failure of run
+npm install -g pm2
+pm2 start index.js --name express-app
+pm2 startup
+pm2 save
+pm2 status
+pm2 logs express-app
